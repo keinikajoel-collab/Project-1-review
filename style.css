@@ -1,0 +1,267 @@
+/* --- Global Reset & Variable Schemes --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark-black: #0b0c10;
+    --bg-card-dark: #1f2833;
+    --text-light-slate: #c5c6c7;
+    --primary-blue: #45f3ff;
+    --deep-accent-blue: #0b7dda;
+    --pure-white: #ffffff;
+}
+
+body {
+    background-color: var(--bg-dark-black);
+    color: var(--text-light-slate);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header & Navigation Menu --- */
+header {
+    background-color: rgba(31, 40, 51, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--deep-accent-blue);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Designed Text-based Premium Logo */
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--pure-white);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--primary-blue);
+    font-style: italic;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light-slate);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-blue);
+}
+
+/* --- Hero Showcase Styling --- */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(11, 12, 16, 0.8), rgba(11, 12, 16, 0.9)), 
+                url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: var(--pure-white);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* --- Modular Layout Styling components --- */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--pure-white);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--deep-accent-blue);
+    color: var(--pure-white);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-blue);
+    color: var(--bg-dark-black);
+    transform: translateY(-2px);
+}
+
+/* --- About & Media Layout Elements --- */
+.about-text {
+    font-size: 18px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.image-placeholder {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 3px solid var(--deep-accent-blue);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-placeholder img {
+    width: 100%;
+    display: block;
+}
+
+.caption {
+    background-color: var(--bg-card-dark);
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* --- Services Layout Architecture --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--bg-card-dark);
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.service-card h3 {
+    color: var(--pure-white);
+    margin-bottom: 15px;
+}
+
+/* --- Real Estate Market Listings Grid --- */
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.property-card {
+    background-color: var(--bg-card-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.property-card:hover {
+    transform: scale(1.03);
+}
+
+.property-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.property-info {
+    padding: 20px;
+}
+
+.property-info h3 {
+    color: var(--pure-white);
+    margin-bottom: 10px;
+}
+
+.price {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* --- Contact & Communication Interfaces --- */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--bg-card-dark);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: var(--bg-dark-black);
+    border: 1px solid var(--deep-accent-blue);
+    color: var(--pure-white);
+    border-radius: 4px;
+}
+
+/* --- Footer Standard elements --- */
+footer {
+    background-color: #000000;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    font-size: 14px;
+    border-top: 1px solid var(--bg-card-dark);
+}
+
+/* --- JavaScript Animation Classes --- */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
